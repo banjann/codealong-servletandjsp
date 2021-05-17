@@ -2,6 +2,7 @@ package com.demoapp.servlets;
 
 import java.io.IOException;
 
+import javax.servlet.http.Cookie;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
@@ -15,8 +16,13 @@ public class AddServletUsingRedirection extends HttpServlet {
 		
 		int sum = firstNumber + secondNumber;
 		
-		HttpSession session = req.getSession();
-		session.setAttribute("sum", sum);
+		//using session in storing client information
+//		HttpSession session = req.getSession();
+//		session.setAttribute("sum", sum);
+		
+		//using cookie in storing client information
+		Cookie cookie = new Cookie("sum", String.valueOf(sum));
+		res.addCookie(cookie);
 		
 		res.sendRedirect("squareRedirection");
 	}

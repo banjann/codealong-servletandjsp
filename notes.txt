@@ -8,3 +8,6 @@ Calling a servlet from a servlet:
 	-maintain first the HttpSession to get a hold of the data from the client through request.getSession() and;
 	-setAttribute in the held HttpSession, and;
 	-sendRedirect() to the servlet that needs to be called using the HttpServletResponse
+	-in the servlet being called, get in instance of HttpSession and from that session, getAttribute() the earlier setAttribute();
+		-ASIDE FROM USING HttpSession, you can also use Cookies to store client information
+		
