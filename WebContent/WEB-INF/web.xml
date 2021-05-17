@@ -10,4 +10,35 @@
 	<url-pattern>/add</url-pattern>
 </servlet-mapping>
 
+<servlet>
+	<servlet-name>squareServlet</servlet-name>
+	<servlet-class>com.demoapp.servlets.SquareServlet</servlet-class>
+</servlet>
+
+<servlet-mapping>
+	<servlet-name>squareServlet</servlet-name>
+	<url-pattern>/squared</url-pattern>
+</servlet-mapping>
+
+
+<servlet>
+	<servlet-name>addServletRedirect</servlet-name>
+	<servlet-class>com.demoapp.servlets.AddServletUsingRedirection</servlet-class>
+</servlet>
+
+<servlet-mapping>
+	<servlet-name>addServletRedirect</servlet-name>
+	<url-pattern>/addRedirection</url-pattern>
+</servlet-mapping>
+
+<servlet>
+	<servlet-name>squareServletRedirect</servlet-name>
+	<servlet-class>com.demoapp.servlets.SquareServletUsingRedirection</servlet-class>
+</servlet>
+
+<servlet-mapping>
+	<servlet-name>squareServletRedirect</servlet-name>
+	<url-pattern>/squareRedirection</url-pattern>
+</servlet-mapping>
+
 </web-app>

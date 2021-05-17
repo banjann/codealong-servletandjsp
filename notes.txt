@@ -1,0 +1,10 @@
+SERVLET
+
+Calling a servlet from a servlet:
+1. First option is to use RequestDispatcher
+	-setAttribute() to HttpServletRequest and forward the same HttpServletRequest and HttpServletResponse to the servlet that is needed to be called using the RequestDispatcher and getAttribute() in the servlet
+	being called
+2. Second option is to use Redirecting
+	-maintain first the HttpSession to get a hold of the data from the client through request.getSession() and;
+	-setAttribute in the held HttpSession, and;
+	-sendRedirect() to the servlet that needs to be called using the HttpServletResponse
