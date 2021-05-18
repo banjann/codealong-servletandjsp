@@ -54,7 +54,7 @@ public class SquareServletUsingRedirection extends HttpServlet {...}
 -when running JSP, it gets converted by the server(e.g. Tomcat) automatically to servlet
 
 4 tags in JSP
-1. directive tag - to declare package imports
+1. directive tag - to declare package imports, contentType, language, etc.
 Example:
 	<%@page import="java.util.*"%>
 	
