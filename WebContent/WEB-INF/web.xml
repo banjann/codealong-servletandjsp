@@ -31,14 +31,14 @@
 	<url-pattern>/addRedirection</url-pattern>
 </servlet-mapping>
 
-<servlet>
-	<servlet-name>squareServletRedirect</servlet-name>
-	<servlet-class>com.demoapp.servlets.SquareServletUsingRedirection</servlet-class>
-</servlet>
+<context-param>
+	<param-name>name</param-name>
+	<param-value>Ivan</param-value>
+</context-param>
 
-<servlet-mapping>
-	<servlet-name>squareServletRedirect</servlet-name>
-	<url-pattern>/squareRedirection</url-pattern>
-</servlet-mapping>
+<context-param>
+	<param-name>phone</param-name>
+	<param-value>Huawei</param-value>
+</context-param>
 
 </web-app>

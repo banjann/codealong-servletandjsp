@@ -1,4 +1,4 @@
-SERVLET
+*****SERVLET******
 
 Calling a servlet from a servlet:
 1. First option is to use RequestDispatcher
@@ -11,3 +11,51 @@ Calling a servlet from a servlet:
 	-in the servlet being called, get in instance of HttpSession and from that session, getAttribute() the earlier setAttribute();
 		-ASIDE FROM USING HttpSession, you can also use Cookies to store client information
 		
+
+***ServletConfig and ServletContext***
+1. ServletContext
+-You can initialize value of variables in ServletContext by configuring <context-param> in web.xml and access it in the servlet by getting an implementation of ServletContext via getServletContext()
+-NOTE: the initialized variable can be accessed by all servlets, use this when many servlets will need the initialized value
+2. ServletConfig
+-you can initiliaze value of a variable that can only be accessed by a particular servlet using ServletConfig, by configuring web.xml and adding <init-param> inside the <servlet> tag
+
+***Annotations instead of web.xml***
+via web.xml
+<servlet>
+	<servlet-name>squareServletRedirect</servlet-name>
+	<servlet-class>com.demoapp.servlets.SquareServletUsingRedirection</servlet-class>
+	
+	<init-param>
+		<param-name>name</param-name>
+		<param-value>Ivan ServletConfig Version</param-value>
+	</init-param>
+</servlet>
+
+<servlet-mapping>
+	<servlet-name>squareServletRedirect</servlet-name>
+	<url-pattern>/squareRedirection</url-pattern>
+</servlet-mapping>
+
+via annotations
+@WebServlet(
+		value = "/squareRedirection",
+		initParams = {
+				@WebInitParam(name = "name", value = "Ivan ServletConfig Version")
+				}
+		)
+public class SquareServletUsingRedirection extends HttpServlet {...}
+
+
+========================================================================================================================================================================================================
+
+*****JSP******
+
+-the gap that JSP tried to address is the inconvenience of sending output from servlets that involves html tags
+-when running JSP, it gets converted by the server(e.g. Tomcat) automatically to servlet
+
+4 tags in JSP
+1. directive tag - to declare package imports
+2. declarative tag - to declare variable outside the "imaginary" service method
+3. scriplet - inside this tag is the logic of the "imaginary" service method
+4. experssion tag - to print something without using PrintWriter
+
