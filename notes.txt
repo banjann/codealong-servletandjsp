@@ -55,7 +55,30 @@ public class SquareServletUsingRedirection extends HttpServlet {...}
 
 4 tags in JSP
 1. directive tag - to declare package imports
-2. declarative tag - to declare variable outside the "imaginary" service method
-3. scriplet - inside this tag is the logic of the "imaginary" service method
+Example:
+	<%@page import="java.util.*"%>
+	
+2. declaration tag - to declare variable outside the service method
+Example:
+	<%!
+	int variable = 3;
+	%>
+	
+3. scriptlet - inside this tag is the logic of the service method
+Example:
+	<%
+	int variable = 3;
+	%>
+	
 4. experssion tag - to print something without using PrintWriter
-
+Example:
+	<%=coef%>
+	
+Built-in objects in JSP
+1. request (HttpServletRequest)
+2. response (HttpServletResponse)
+3. pageContext (PageContext) - somewhat the same idea as the ServletConfig, but, the difference is, the data stored will only be utilized within a single page
+4. out (JspWriter) ~ PrintWriter object
+5. session (HttpSession)
+6. application (ServletContext)
+7. config (ServletConfig)
